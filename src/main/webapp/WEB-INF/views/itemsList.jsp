@@ -17,6 +17,7 @@
     <th>quantity</th>
     <th>quantity_type</th>
     <th>warehouse</th>
+    <th>CRUD</th>
 
   </tr>
   <c:forEach items="${items}" var="item">
@@ -27,8 +28,11 @@
       <td>${item.quantityType}</td>
       <td>${item.warehouse}</td>
       <td>
-          <%--                <a href="<c:url value="/category/delete/${category.id}"/>">delete</a>--%>
-          <%--                <a href="<c:url value="/category/edit/${category.id}"/>">edit</a>--%>
+        <div class="btn-group">
+        <button onclick="location.href='/app/items/delete/${item.id}'" type="button">delete</button>
+        <button onclick="location.href='/app/items/edit/${item.id}'" type="button">edit</button>
+        </div>
+
       </td>
     </tr>
 

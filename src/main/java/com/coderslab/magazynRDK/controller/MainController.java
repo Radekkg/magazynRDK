@@ -20,6 +20,12 @@ public class MainController {
     private ItemService itemService;
 
 
+    //dodanie listy pobranych przedmiotów
+    //stworzenie tabeli z pobranymi przedmiotami
+    //przełaczanie miedzy magazynami
+    //wyszukiwanie przedmiotów po nazwie
+    //wyszukiwanie przedmiotów z listy
+
 //    @PostMapping(path="/add")
 //    public @ResponseBody String addNewItem (@RequestParam String name
 //            , @RequestParam Integer quantity) {

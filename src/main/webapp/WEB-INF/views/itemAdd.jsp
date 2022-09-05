@@ -19,15 +19,11 @@
     Quantity:
     <form:input path="quantity"/>
     <form:errors path="quantity" cssClass="error-class"/>
-<%--    Weight:--%>
-<%--    <form:input path="weight"/>--%>
-<%--    Height:--%>
-<%--    <form:input path="height"/>--%>
-<%--    Position:--%>
-<%--    <form:select path="position" items="${positions}"/>--%>
-<%--    <form:errors path="position" cssClass="error-class"/>--%>
-<%--    Ready to play?:--%>
-<%--    <form:checkbox path="readyToPlay"/>--%>
+<%--tutaj cos mi nie działa powinno sie wybierac z dostepnych sztuk--%>
+    Jednostka:
+    <form:select itemValue="id" itemLabel="name" path="quantityType.id" items="${quantityTypes}"/>
+    Magazyn:
+    <form:select itemValue="id" itemLabel="name" path="warehouse.id" items="${warehouses}"/>
 
 
 

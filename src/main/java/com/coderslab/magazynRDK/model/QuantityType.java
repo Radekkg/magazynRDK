@@ -26,6 +26,6 @@ public class QuantityType {
 
     @Override
     public String toString() {
-        return name;
+        return this.name;
     }
 }

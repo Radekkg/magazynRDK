@@ -1,17 +1,20 @@
 package com.coderslab.magazynRDK.controller;
 
 import com.coderslab.magazynRDK.model.Item;
+import com.coderslab.magazynRDK.model.QuantityType;
+import com.coderslab.magazynRDK.model.Warehouse;
 import com.coderslab.magazynRDK.services.ItemService;
+import com.coderslab.magazynRDK.services.QuantityTypeService;
+import com.coderslab.magazynRDK.services.WarehouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/app/items")
@@ -19,6 +22,10 @@ public class ItemController {
 
     @Autowired
     private ItemService itemService;
+    @Autowired
+    private QuantityTypeService quantityTypeService;
+    @Autowired
+    private WarehouseService warehouseService;
 
     @GetMapping("/list")
     public String getItemsList(Model model){
@@ -40,4 +47,39 @@ public class ItemController {
         itemService.save(item);
         return "redirect:/app/items/list";
     }
+
+    @RequestMapping("edit/{id}")
+    public String edit(@PathVariable Integer id, Model model) {
+        Optional<Item> byId = itemService.edit(id);
+        model.addAttribute("item",byId);
+        return "itemAdd";
+    }
+    @PostMapping("/edit/{id}")
+    public String edit(Item item) {
+        itemService.save(item);
+        return "redirect:/app/items/list";
+    }
+
+    @RequestMapping("/delete/{id}")
+    public String delete(@PathVariable Integer id) {
+        itemService.delete(id);
+        return "redirect:/app/items/list";
+    }
+    @ModelAttribute("quantityTypes")
+    public Iterable<QuantityType> quantityTypes(){
+        return quantityTypeService.getQuantityTypeList();
+    }
+    @ModelAttribute("warehouses")
+    public Iterable<Warehouse> warehouses(){
+        return warehouseService.getQuantityTypeList();
+    }
+    //test
+    @GetMapping("/{warehouseName}")
+    public String showItemsByWarehouse(@PathVariable String warehouseName, Model model) {
+        model.addAttribute("itemsByWarehouseName", itemService.findAllByWarehouseName(warehouseName));
+// nie jestem pewnien czy to zadziała
+        return "itemsByWarehouseName";
+    }
+
 }
+

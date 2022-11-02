@@ -21,6 +21,10 @@ public class ItemService {
     public Optional<Item> edit(Integer id) {
         return itemRepository.findById(id);
     }
+
+    public List<Item> findItemsByName(String name) {
+        return itemRepository.findAllItemsByName(name);
+    }
     public void delete(Integer id){
         itemRepository.deleteById(id);
     }

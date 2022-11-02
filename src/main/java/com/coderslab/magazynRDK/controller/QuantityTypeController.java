@@ -27,18 +27,18 @@ public class QuantityTypeController {
     public String getQuantityTypesList(Model model){
         List<QuantityType> all = (List<QuantityType>) quantityTypeService.getQuantityTypeList();
         model.addAttribute("quantityTypes",all);
-        return "quantityTypesList";
+        return "quantityType/quantityTypesList";
     }
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("quantityType", new QuantityType());
-        return "quantityTypeAdd";
+        return "quantityType/quantityTypeAdd";
     }
     @PostMapping("/add")
     public String save(@Valid QuantityType quantityType, BindingResult result) {
 
         if (result.hasErrors()) {
-            return "quantityTypeAdd";
+            return "quantityType/quantityTypeAdd";
         }
         quantityTypeService.save(quantityType);
         return "redirect:/app/quantityTypes/list";
@@ -47,7 +47,7 @@ public class QuantityTypeController {
     public String edit(@PathVariable Integer id, Model model) {
         Optional<QuantityType> byId = quantityTypeService.edit(id);
         model.addAttribute("quantityType",byId);
-        return "quantityTypeAdd";
+        return "quantityType/quantityTypeAdd";
     }
     @PostMapping("/edit/{id}")
     public String edit(QuantityType quantityType) {
@@ -61,9 +61,5 @@ public class QuantityTypeController {
         return "redirect:/app/quantityTypes/list";
     }
 
-
-    //Dodawanie nowej jednostki miar
-    //usuwanie jednostki miar
-    //dodanie widoku
 
 }

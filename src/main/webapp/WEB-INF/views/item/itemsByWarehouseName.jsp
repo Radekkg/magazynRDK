@@ -2,18 +2,22 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-<%--    <link rel="stylesheet" href="/css/style.css">--%>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-<jsp:include page="navibar.jsp"/>
+<jsp:include page="../bar/navibar.jsp"/>
+<jsp:include page="../bar/warehousebar.jsp"/>
 <table>
     <tr>
         <th>id</th>
-        <th>name</th>
-        <th>quantity</th>
-        <th>quantity_type</th>
-        <th>warehouse</th>
+        <th>Nazwa</th>
+        <th>Ilość</th>
+        <th>Jednostka</th>
+        <th>Kategoria</th>
+        <th>Miejsce</th>
+        <th>Magazyn</th>
+        <th></th>
 
 
 
@@ -24,6 +28,8 @@
             <td>${item.name}</td>
             <td>${item.quantity}</td>
             <td>${item.quantityType}</td>
+            <td>${item.category}</td>
+            <td>${item.rack}</td>
             <td>${item.warehouse}</td>
 
 

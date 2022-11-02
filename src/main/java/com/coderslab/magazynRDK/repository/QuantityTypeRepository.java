@@ -6,5 +6,4 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface QuantityTypeRepository extends CrudRepository<QuantityType, Integer> {
-    //List<QuantityType> findAll();
 }

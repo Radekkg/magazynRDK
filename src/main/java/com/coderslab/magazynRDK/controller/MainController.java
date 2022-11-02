@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 //RestController
 //
 @Controller
-@RequestMapping(path = "/demo")
+@RequestMapping(path = "/")
 public class MainController {
 
     @Autowired
@@ -19,37 +19,18 @@ public class MainController {
     @Autowired
     private ItemService itemService;
 
-
-    //dodanie listy pobranych przedmiotów
-    //stworzenie tabeli z pobranymi przedmiotami
-    //przełaczanie miedzy magazynami
-    //wyszukiwanie przedmiotów po nazwie
-    //wyszukiwanie przedmiotów z listy
-
-//    @PostMapping(path="/add")
-//    public @ResponseBody String addNewItem (@RequestParam String name
-//            , @RequestParam Integer quantity) {
-//        Item item = new Item();
-//        item.setName(name);
-//        item.setQuantity(quantity);
-//        itemRepository.save(item);
-//        return "Saved";
-//    }
-
-        @PostMapping("/add")
-        //to jest jak nie ma jsp
-        @ResponseBody
-        //
-        public String addNewItem (@RequestBody Item item) {
-        itemService.save(item);
-        return "Saved";
+    @GetMapping("/")
+    public String menuPage(){
+        return "index";
+    }
+    @GetMapping("/utils")
+    public String utils(){
+        return "utils/utils";
     }
 
-
-    @GetMapping("/all")
-    public @ResponseBody Iterable<Item> getAllItems() {
-        // This returns a JSON or XML with the users
-        return itemRepository.findAll();
+    @GetMapping("/warehouseUtils")
+    public String warehouseUtils(){
+        return "utils/warehouseUtils";
     }
 
 }

@@ -7,7 +7,6 @@ import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
 
 @Entity
 @Getter
@@ -34,4 +33,13 @@ public class Item {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="idWarehouse")
     private Warehouse warehouse;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="idRack")
+    private Rack rack;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name="idCategory")
+    private Category category;
+
 }

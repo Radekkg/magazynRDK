@@ -4,11 +4,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <%--  <link rel="stylesheet" href="/css/style.css">--%>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 
 <body>
-<jsp:include page="navibar.jsp"/>
+<jsp:include page="../bar/navibar.jsp"/>
+<jsp:include page="../bar/utilbar.jsp"/>
 
 <table>
   <tr>
@@ -23,7 +24,7 @@
       <td>${quantityType.name}</td>
       <td>
         <div class="btn-group">
-          <button onclick="location.href='/app/quantityTypes/delete/${quantityType.id}'" type="button">delete</button>
+          <button onclick="location.href='/app/quantityTypes/delete/${quantityType.id}'" type="button" id="delete">delete</button>
           <button onclick="location.href='/app/quantityTypes/edit/${quantityType.id}'" type="button">edit</button>
         </div>
 

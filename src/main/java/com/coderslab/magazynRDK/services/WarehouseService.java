@@ -17,8 +17,5 @@ public class WarehouseService {
     public Iterable<Warehouse> getQuantityTypeList(){
         return warehouseRepository.findAll();
     }
-//    public List<Warehouse> findAllByWarehouseName(String name) {
-//        return warehouseRepository.findAllByWarehouseName(name);
-//    }
 
 }

@@ -21,8 +21,8 @@ public class QuantityType {
     @Length(min=2)
     private String name;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "quantityType")
-    private List<Item> items;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "quantityType")
+//    private List<Item> items;
 
     @Override
     public String toString() {

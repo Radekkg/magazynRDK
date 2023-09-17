@@ -1,9 +1,13 @@
 package com.coderslab.magazynRDK.services;
 
+import com.coderslab.magazynRDK.model.Category;
 import com.coderslab.magazynRDK.model.Item;
 import com.coderslab.magazynRDK.model.Warehouse;
 import com.coderslab.magazynRDK.repository.ItemRepository;
+import org.hibernate.engine.jdbc.spi.JdbcServices;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,6 +18,8 @@ public class ItemService {
 
     @Autowired
     private ItemRepository itemRepository;
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     public void save(Item item){
         itemRepository.save(item);
@@ -36,4 +42,10 @@ public class ItemService {
     public List<Item> findAllByWarehouseName(String name) {
         return itemRepository.findAllByWarehouseName(name);
     }
+
+    public List<Item> getAll(){
+        return jdbcTemplate.query("SELECT it.id,ca.name,it.quantity,it.name FROM items it LEFT JOIN categories ca ON it.id_category = ca.id",
+                BeanPropertyRowMapper.newInstance(Item.class));
+    }
+
 }

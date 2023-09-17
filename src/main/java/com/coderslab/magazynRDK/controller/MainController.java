@@ -23,6 +23,7 @@ public class MainController {
     public String menuPage(){
         return "index";
     }
+
     @GetMapping("/utils")
     public String utils(){
         return "utils/utils";

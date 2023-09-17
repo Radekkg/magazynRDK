@@ -35,6 +35,8 @@ public class ItemController {
         model.addAttribute("items",all);
         return "item/itemsList";
     }
+
+
     @GetMapping("/add")
     public String add(Model model) {
         model.addAttribute("item", new Item());

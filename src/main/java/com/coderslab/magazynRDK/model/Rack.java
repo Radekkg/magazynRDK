@@ -25,8 +25,8 @@ public class Rack {
     //@NotBlank
     private Integer place;
 
-    @OneToMany(fetch = FetchType.LAZY, mappedBy = "rack")
-    private List<Item> items;
+//    @OneToMany(fetch = FetchType.LAZY, mappedBy = "rack")
+//    private List<Item> items;
 
     @Override
     public String toString() {

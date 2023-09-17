@@ -121,9 +121,10 @@ input[type=submit] {
 /*h1{*/
 /*    text-align: center;*/
 /*}*/
-foto{
-    margin-left: auto;
-    margin-right: auto; }
+#foto{
+    margin: center;
+}
+
 
 /* Navbar links */
 #navbar a {

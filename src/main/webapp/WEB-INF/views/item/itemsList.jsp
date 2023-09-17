@@ -28,6 +28,9 @@
         <th>Kategoria</th>
         <th>Miejsce</th>
         <th>Magazyn</th>
+        <th>QR Code</th>
+        <th>Opis</th>
+
         <th></th>
 
     </tr>
@@ -40,6 +43,8 @@
             <td>${item.category}</td>
             <td>${item.rack}</td>
             <td>${item.warehouse}</td>
+            <td>${item.qrCode}</td>
+            <td>${item.description}</td>
             <td>
                 <div class="btn-group">
                     <button onclick="location.href='/app/items/delete/${item.id}'" type="button" id="delete">delete

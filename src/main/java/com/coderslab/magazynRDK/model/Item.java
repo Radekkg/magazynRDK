@@ -23,8 +23,10 @@ public class Item {
     @Length(min = 2)
     private String name;
     //@NotBlank
-    //@Length(min = 2)
+    @Length(min = 1)
     private Integer quantity;
+    private String qrCode;
+    private String description;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="idQuantityType")
@@ -37,9 +39,8 @@ public class Item {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="idRack")
     private Rack rack;
-
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name="idCategory")
+    @JoinColumn(name="id_category")
     private Category category;
 
 }

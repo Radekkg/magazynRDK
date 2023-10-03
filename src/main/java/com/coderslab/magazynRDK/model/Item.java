@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.validator.constraints.Length;
+import org.hibernate.validator.constraints.NotBlank;
 
 import javax.persistence.*;
 
@@ -23,10 +24,11 @@ public class Item {
     @Length(min = 2)
     private String name;
     //@NotBlank
-    @Length(min = 1)
+    //@Length(min = 1)
     private Integer quantity;
     private String qrCode;
     private String description;
+    //private String containerNumber;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="idQuantityType")

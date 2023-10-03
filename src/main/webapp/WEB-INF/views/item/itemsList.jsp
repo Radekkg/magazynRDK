@@ -21,11 +21,13 @@
 <%--</div>--%>
 <table>
     <tr>
-        <th>id</th>
+        <th>Id</th>
         <th>Nazwa</th>
         <th>Ilość</th>
         <th>Jednostka</th>
         <th>Kategoria</th>
+        <th>Regał nr</th>
+        <th>Poziom</th>
         <th>Miejsce</th>
         <th>Magazyn</th>
         <th>QR Code</th>
@@ -41,7 +43,9 @@
             <td>${item.quantity}</td>
             <td>${item.quantityType}</td>
             <td>${item.category}</td>
-            <td>${item.rack}</td>
+            <td>${item.rack.number}</td>
+            <td>${item.rack.level}</td>
+            <td>${item.rack.place}</td>
             <td>${item.warehouse}</td>
             <td>${item.qrCode}</td>
             <td>${item.description}</td>

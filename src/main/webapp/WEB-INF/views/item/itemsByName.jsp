@@ -10,7 +10,7 @@
 <jsp:include page="../bar/warehousebar.jsp"/>
 <table>
   <tr>
-    <th>id</th>
+    <th>Id</th>
     <th>Nazwa</th>
     <th>Ilość</th>
     <th>Jednostka</th>

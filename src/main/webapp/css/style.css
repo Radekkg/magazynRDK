@@ -157,10 +157,13 @@ input[type=submit] {
 }
 table {
     border-collapse: collapse;
+    margin: auto;
+    margin-top: 5px;
+    font-size: 20px;
     /*width: 100%;*/
 }
 th, td {
-    text-align: left;
+    text-align: center;
     padding: 8px;
 }
 tr:nth-child(even){background-color: #f2f2f2}

@@ -28,10 +28,10 @@ public class Rack {
 //    @OneToMany(fetch = FetchType.LAZY, mappedBy = "rack")
 //    private List<Item> items;
 
-    @Override
-    public String toString() {
-        return "n " + number +
-                ", l " + level +
-                ", p " + place;
-    }
+//    @Override
+//    public String toString() {
+//        return "n " + number +
+//                ", l " + level +
+//                ", p " + place;
+//    }
 }
